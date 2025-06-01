@@ -1,0 +1,32 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    color: #0d6efd;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    border-radius: 50px;
+    padding: 10px 25px;
+    font-weight: 600;
+}
+body {
+    background: #f0f9ff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+h1 {
+    color: #007bff;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}

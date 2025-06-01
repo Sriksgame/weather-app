@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather for Farmers</title>
+    
+    <!-- PWA Manifest & Service Worker -->
+    <link rel="manifest" href="{% static 'manifest.json' %}">
+    <script src="{% static 'serviceworker.js' %}"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">🌾 Weather for Farmers</h1>
+        
+        <form method="post" class="form-inline justify-content-center mb-4">
+            {% csrf_token %}
+            <input type="text" name="city" placeholder="Enter city name" class="form-control mr-2" required>
+            <button type="submit" class="btn btn-primary">Get Weather</button>
+        </form>
+
+        {% if weather_data %}
+            {% if weather_data.error %}
+                <div class="alert alert-danger text-center">{{ weather_data.error }}</div>
+            {% else %}
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ weather_data.city }}</h3>
+                        <p class="card-text">🌡️ Temperature: {{ weather_data.temperature }}°C</p>
+                        <p class="card-text">☁️ Description: {{ weather_data.description }}</p>
+                        <p class="card-text">💧 Humidity: {{ weather_data.humidity }}%</p>
+                        <p class="card-text">💨 Wind Speed: {{ weather_data.wind_speed }} m/s</p>
+                    </div>
+                </div>
+
+                {% if weather_data.tip %}
+                    <p class="alert alert-info mt-3 text-center">{{ weather_data.tip }}</p>
+                {% endif %}
+            {% endif %}
+        {% endif %}
+    </div>
+</body>
+</html>
