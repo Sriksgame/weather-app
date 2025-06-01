@@ -52,7 +52,7 @@ weather_project/
 
 ### 1. Clone the Repository
 
-```bash
+``bash
 git clone https://github.com/yourusername/django-weather-app.git
 cd django-weather-app
 Create and Activate Virtual Environment
