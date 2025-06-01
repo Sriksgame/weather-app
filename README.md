@@ -56,21 +56,14 @@ weather_project/
 git clone https://github.com/yourusername/django-weather-app.git
 cd django-weather-app
 Create and Activate Virtual Environment
-bash
-Copy
-Edit
+
 python3 -m venv env
 source env/bin/activate  # On Windows: env\Scripts\activate
-3. Install Dependencies
-bash 
-Copy
-Edit
+### 3. Install Dependencies
+
 pip install -r requirements.txt
 If requirements.txt is missing, install manually:
 
-bash
-Copy
-Edit
 pip install django requests
 🔑 API Setup
 This app uses the OpenWeatherMap API.
@@ -81,21 +74,15 @@ Get your API key
 
 Add it to weather_app/views.py:
 
-python
-Copy
-Edit
+
 API_KEY = "your_openweathermap_api_key"
 🔄 Run Migrations
-bash
-Copy
-Edit
+
 python manage.py migrate
 📁 Static Files
 Ensure this folder and these files exist:
 
-arduino
-Copy
-Edit
+
 weather_app/static/css/styles.css
 weather_app/static/manifest.json
 weather_app/static/serviceworker.js
@@ -103,14 +90,10 @@ weather_app/static/icons/icon-192.png
 weather_app/static/icons/icon-512.png
 Then run:
 
-bash
-Copy
-Edit
+
 python manage.py collectstatic
 ▶️ Start the Server
-bash
-Copy
-Edit
+
 python manage.py runserver
 Open http://127.0.0.1:8000 in your browser.
 
@@ -148,5 +131,3 @@ Copy
 Edit
 
 ---
-
-Let me know if you'd like me to also generate the `manifest.json`, `styles.css`, `serviceworker.js`, or `requirements.txt` files for your repo!
